@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Navigation</title>
+    <style>
+        /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Navigation Styles */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: #333;
+}
+
+/* Section Styles */
+.section-one, .section-two, .section-three {
+    padding: 10px;
+    color: white;
+}
+
+/* Descendant Combinators - Different Colors for Sections */
+.section-one a {
+    color: lightblue;
+}
+
+.section-two a {
+    color: lightgreen;
+}
+
+.section-three a {
+    color: lightcoral;
+}
+
+/* Child Combinator - Only Direct Child Links */
+.section-one > a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Pseudo-Classes */
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: red;
+}
+
+/* Attribute Selector - External Links */
+a[href^="https"] {
+    color: gold !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <section class="section-one">
+            <h2>Section 1</h2>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <div>
+                <a href="#">Nested Link 1</a>
+                <a href="#">Nested Link 2</a>
+            </div>
+        </section>
+
+        <section class="section-two">
+            <h2>Section 2</h2>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+        </section>
+
+        <section class="section-three">
+            <h2>Section 3</h2>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+            <a href="https://example.com">External Link</a>
+        </section>
+    </nav>
+</body>
+</html>
